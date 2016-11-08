@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by maciekzdaleka (http://jsbin.com/zulaza/4/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="[Lab 2 ex 2]">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script id="jsbin-javascript">
+var COL = 101;
+var ROW = 50;
+var firstRow = [];
+var nextRow = [];
+var x;
+var y;
+
+for (y=0; y<COL; y++){
+  firstRow[y] = (Math.round(Math.random()));
+}
+nextRow.push(firstRow);
+
+for(x=1; x<ROW; x++){
+  
+  var idenRow = [];
+  
+  for (y = 0; y<COL; y++){
+    var topColumn = y;
+    var leftColumn = y - 1;
+    var rightColumn = y + 1;
+
+    if (y === 0){
+      leftColumn = COL-1;
+    }
+    if (y == COL-1)
+    {
+      rightColumn = 0;
+    }
+    if ((nextRow[x-1][topColumn] === 1) &&  (nextRow[x-1][leftColumn] == 1) && (nextRow[x-1][rightColumn] == 1)){
+      idenRow[y] = 1;
+    }
+    if ((nextRow[x-1][topColumn] === 1) &&  (nextRow[x-1][leftColumn] == 1) && (nextRow[x-1][rightColumn] == 0)){
+      idenRow[y] = 0;
+    }
+    if ((nextRow[x-1][topColumn] === 0) &&  (nextRow[x-1][leftColumn] == 1) && (nextRow[x-1][rightColumn] == 1)){
+      idenRow[y] = 1;
+    }
+    if ((nextRow[x-1][topColumn] === 0) &&  (nextRow[x-1][leftColumn] == 1) && (nextRow[x-1][rightColumn] == 0)){
+      idenRow[y] = 1;
+    }
+    if ((nextRow[x-1][topColumn] == 1) &&  (nextRow[x-1][leftColumn] == 0) && (nextRow[x-1][rightColumn] == 1)){
+      idenRow[y] = 0;
+    }
+    if ((nextRow[x-1][topColumn] == 1) &&  (nextRow[x-1][leftColumn] == 0) && (nextRow[x-1][rightColumn] == 0)){
+      idenRow[y] = 1;
+    }
+    if ((nextRow[x-1][topColumn] === 0) &&  (nextRow[x-1][leftColumn] == 0) && (nextRow[x-1][rightColumn] == 1)){
+      idenRow[y] = 1;
+    }
+    if ((nextRow[x-1][topColumn] === 0) &&  (nextRow[x-1][leftColumn] == 0) && (nextRow[x-1][rightColumn] == 0)){
+      idenRow[y] = 0;
+    }
+  }
+  nextRow.push(idenRow);
+}
+
+for (x=0; x<ROW; x++) {
+  var container = document.createElement('DIV');
+  container.style.borderStyle="solid";
+  container.style.borderColor="black";
+  container.style.borderWidth="1px";
+  container.style.display = "inline-block";
+  
+  
+  for (y=0; y<COL; y++) {
+    var smallSquares = document.createElement('DIV');
+    smallSquares.style.height = "8px";
+    smallSquares.style.width = "8px";
+    smallSquares.style.margin = "1px";
+    
+    if (nextRow[x][y].toString() == "1"){
+      smallSquares.style.backgroundColor = "#00ff00";
+      container.appendChild(smallSquares);
+    }
+    else{
+      smallSquares.style.backgroundColor ="#ff0000";
+      container.appendChild(smallSquares);
+    }
+  }
+  document.body.appendChild(container)
+}
+</script>
+</body>
+</html>
