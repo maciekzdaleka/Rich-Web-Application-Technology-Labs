@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="[lab 5]">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+body {
+    width: 600px;
+    height: 670px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 20px 25px 6px 25px;
+    position: relative;
+    font:  bold 15px Arial;
+    margin: 0px;
+}
+
+button {
+  background: #afb4b8;
+  border-radius: 11px;
+  font-family: Arial;
+  color: #140114;
+  font-size: 15px;
+  padding: 6px 30px 6px 30px;
+  text-decoration: none;
+  position: relative;
+  left: 39px;
+}
+
+button:hover {
+  background: #59d62f;
+  text-decoration: none;
+}
+
+input {
+  display: inline-block;
+  box-sizing: content-box;
+  padding: 6px 25px 6px 25px;
+  border: 1px solid #b7b7b7;
+  border-radius: 8px;
+  font: normal 16px/normal Arial, Helvetica, sans-serif;
+  color: #000000;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) 
+  position: absolute;
+  top: 32px;
+  right: 7px;
+  width: 340px;
+}
+
+p{
+  font-family: Arial;
+  color: #140114;
+  font-size: 15px;
+  position: relative;
+  left: 3px;
+  top: 15px;
+}
+
+p2{
+  font-family: Arial;
+  color: #140114;
+  font-size: 15px;
+  position: relative;
+  left: 283px;
+  top: -20px;
+}
+
+box1 {
+    width: 265px;
+    height: 512px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
+    position: absolute;
+}
+
+box2 {
+    width: 265px;
+    height: 512px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: -px 1px 1px 1px;
+    float: right;
+}
+
+imagebox {
+    width: 243px;
+    height: 200px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
+    position: absolute;
+    border-radius: 8px;
+}
+
+detialsbox {
+    width: 265px;
+    height: 280px;
+    border: 0px solid black;
+    box-sizing: border-box;
+    position: absolute;
+    top: 230px;
+    left: -1px;
+}
+table { 
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  
+  
+ }
+ 
+td{
+  border: 1px solid black;
+  padding: 1px;
+  margin-left: 2px;
+  padding-left: 10px;
+}
+tr{
+  padding: 1px;
+}
+
+repobox {
+    width: 266px;
+    height: 512px;
+    border: 0px solid balck;
+    box-sizing: border-box;
+    position: absolute;
+    right: 24px;
+    top: 115px;
+    
+}
+</style>
+</head>
+<body>
+<form action="search" method="post">
+<input type="text" onClick="value = ''" id="usernamesearch" value="Username"> 
+<button onclick="findData()" >Search</button>
+  <p>User Profile</p> <p2>User Repos</p2>
+  
+</form>
+  <box1>
+    <imagebox>
+      <img id="userpicture" src="" alt="user picture" style="width:100%;height:100%;">
+    </imagebox>
+  <detialsbox>
+      <table>
+    <tr>
+      <td><output type="text" id="name" value="Name">Name</output></td>
+    </tr>
+    <tr>
+      <td><output type="text" id="username" value="Username">Username</output></td>
+      </tr>
+    <tr>
+      <td><output type="email" id="email" value="email">Email</output></td>
+      </tr>
+    <tr>
+      <td><output type="Text" id="location" value="location">Location</output></td>
+      </tr>
+    <tr>
+      <td><output type="text" id="nogits" value="nogits">Number of Gits</output></td>
+    </tr>
+  </table>
+    </detialsbox>
+  </box1>
+  <box2>
+   <repobox>
+       <table>
+    <tr>
+      <td>
+          <output type="text" id="name1" value="Name">Name</output>
+        <br>
+        <br>
+          <output type="text" id="description1" value="description">Description</output>
+      </td>
+    </tr>
+     <tr>
+      <td>
+          <output type="text" id="name2" vvalue="Name">Name</output>
+        <br>
+        <br>
+          <output type="text" id="description2" value="description">Description</output>
+      </td>
+    </tr>
+           <tr>
+      <td>
+          <output type="text" id="name3" value="Name">Name</output>
+        <br>
+        <br>
+          <output type="text" id="description3" value="description">Description</output>
+      </td>
+    </tr>
+     <tr>
+      <td>
+          <output type="text" id="name4" value="Name">Name</output>
+        <br>
+        <br>
+          <output type="text" id="description4" value="description">Description</output>
+      </td>
+    </tr>
+     <tr>
+      <td>
+          <output type="text" id="name5" value="Name">Name</output>
+        <br>
+        <br>
+          <output type="text" id="description5" value="description">Description</output>
+      </td>
+    </tr>
+           <tr>
+      <td>
+          <output type="text" id="name6" value="Name">Name</output>
+        <br>
+        <br>
+          <output type="text" id="description6"valuee="description">Description</output>
+      </td>
+    </tr>
+         
+  </table>
+     </repobox
+  </box2>
+<script id="jsbin-javascript">
+function findData() 
+{
+  parseUserArray();
+}
+var options = {
+  method : 'GET',
+  headers: [{
+    name: 'Maciek', 
+    value: 'Maciek Piotrowski'
+  }]
+};
+
+function fetch(url,options)
+{
+    if(options === null)
+    {
+          options = 'GET'
+    }
+	return new Promise(function(resolve, reject) 
+    {
+		var req = new XMLHttpRequest(); 
+        if(options.method === undefined) 
+        {
+            options.method = 'GET';
+        } 
+		req.open(options.method, url);
+		req.onload = function() 
+        {
+		  if (req.status >= 200 && req.status <=300) 
+          {
+             resolve(req.response);
+		  }
+		  else 
+          {
+			reject(Error(req.statusText));
+		  }
+		};
+	
+		req.onerror = function() 
+		{
+			reject(Error("Network Error"));
+		};
+    req.send();
+  });
+}
+
+function getText()
+{
+	var getUsername = document.getElementById('usernamesearch').value;
+	if (getUsername === null || getUsername === "") 
+    {
+		alert("Username field is balnk. Please enter username");
+	}
+	return getUsername;
+}
+
+function parseUserArray() 
+{
+	var input = getText();
+	var fetchURL = 'https://api.github.com/users/' + input;
+	console.log(fetchURL);
+	fetch(fetchURL,options).then(function(response) {
+    var json = JSON.parse(response);  
+    updatePicture(json);
+    updateName(json);
+    updateUsername(json);
+    updateEmail(json);
+    updateLocation(json);
+    updateNumberOfGits(json);
+      
+  }).catch(function(err) {
+    console.log(err);
+  });
+  
+  var URL2 = 'https://api.github.com/users/' + input + '/repos';
+  fetch(URL2,options).then(function(response) {
+            var json = JSON.parse(response);  
+            var info = json.map(function (item) { return [item.name, item.description]; });
+            var setRepos = document.getElementById('userRepo');
+            
+			var name1 = info[0][0];
+			var desc1 = info[0][1];
+			setRepo1(name1,desc1);
+                 
+            var name2 = info[1][0];
+			var desc2 = info[1][1];
+			setRepo2(name2,desc2);
+            
+            var name3 = info[2][0];
+			var desc3 = info[2][1];
+            setRepo3(name3,desc3);
+            
+            var name4 = info[3][0];
+			var desc4 = info[3][1];
+			setRepo4(name4,desc4);
+            
+            var name5 = info[4][0];
+			var desc5 = info[4][1];
+			setRepo5(name5,desc5);
+             
+            var name6 = info[5][0];
+			var desc6 = info[5][1];
+		    setRepo6(name6,desc6);
+    
+  }).catch(function(err) {
+    console.log(err);
+  });
+}
+
+
+function updatePicture(json) 
+{
+  var avatar = document.getElementById('userpicture');
+  avatar.setAttribute("src", json.avatar_url);
+}
+function updateName(json)
+{
+  var name = document.getElementById('name');
+  name.innerHTML = "Name: " + json.name;
+}
+function updateUsername(json) 
+{
+  var username = document.getElementById('username');
+  username.innerHTML = "Username: " + json.login;
+}
+function updateEmail(json) 
+{
+  var email = document.getElementById('email');
+  email.innerHTML = "Eemail: " + json.email;
+}
+function updateLocation(json) 
+{
+  var location = document.getElementById('location');
+  location.innerHTML = "Location: " + json.location;
+}
+function updateNumberOfGits(json) 
+{
+  var gitnum = document.getElementById('nogits');
+  gitnum.innerHTML = "Number of Gits: " + json.public_gists;
+}
+		
+
+function setRepo1(name1,desc1) 
+{
+	var name = document.getElementById('name1');
+    var desc = document.getElementById('description1');
+	name.innerHTML = "Name: " + name1;
+    desc.innerHTML = "Description: " + desc1;
+}
+
+function setRepo2(name2,desc2) 
+{
+	var name = document.getElementById('name2');
+    var desc = document.getElementById('description2');
+	name.innerHTML = "Name: " + name2;
+    desc.innerHTML = "Description: " + desc2;
+}
+
+function setRepo3(name3,desc3) 
+{
+	var name = document.getElementById('name3');
+    var desc = document.getElementById('description3');
+	name.innerHTML = "Name: " + name3;
+    desc.innerHTML = "Description: " + desc3;
+}
+
+function setRepo4(name4,desc4) 
+{
+	var name = document.getElementById('name4');
+    var desc = document.getElementById('description4');
+	name.innerHTML = "Name: " + name4;
+    desc.innerHTML = "Description: " + desc4;
+}
+
+function setRepo5(name5,desc5) 
+{
+	var name = document.getElementById('name5');
+    var desc = document.getElementById('description5');
+	name.innerHTML = "Name: " + name5;
+    desc.innerHTML = "Description: " + desc5;
+}
+
+function setRepo6(name6,desc6) 
+{
+	var name = document.getElementById('name6');
+    var desc = document.getElementById('description6');
+	name.innerHTML = "Name: " + name6;
+    desc.innerHTML = "Description: " + desc6;
+}
+</script>
+
+
+<script id="jsbin-source-css" type="text/css">body {
+    width: 600px;
+    height: 670px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 20px 25px 6px 25px;
+    position: relative;
+    font:  bold 15px Arial;
+    margin: 0px;
+}
+
+button {
+  background: #afb4b8;
+  border-radius: 11px;
+  font-family: Arial;
+  color: #140114;
+  font-size: 15px;
+  padding: 6px 30px 6px 30px;
+  text-decoration: none;
+  position: relative;
+  left: 39px;
+}
+
+button:hover {
+  background: #59d62f;
+  text-decoration: none;
+}
+
+input {
+  display: inline-block;
+  box-sizing: content-box;
+  padding: 6px 25px 6px 25px;
+  border: 1px solid #b7b7b7;
+  border-radius: 8px;
+  font: normal 16px/normal Arial, Helvetica, sans-serif;
+  color: #000000;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) 
+  position: absolute;
+  top: 32px;
+  right: 7px;
+  width: 340px;
+}
+
+p{
+  font-family: Arial;
+  color: #140114;
+  font-size: 15px;
+  position: relative;
+  left: 3px;
+  top: 15px;
+}
+
+p2{
+  font-family: Arial;
+  color: #140114;
+  font-size: 15px;
+  position: relative;
+  left: 283px;
+  top: -20px;
+}
+
+box1 {
+    width: 265px;
+    height: 512px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
+    position: absolute;
+}
+
+box2 {
+    width: 265px;
+    height: 512px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: -px 1px 1px 1px;
+    float: right;
+}
+
+imagebox {
+    width: 243px;
+    height: 200px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
+    position: absolute;
+    border-radius: 8px;
+}
+
+detialsbox {
+    width: 265px;
+    height: 280px;
+    border: 0px solid black;
+    box-sizing: border-box;
+    position: absolute;
+    top: 230px;
+    left: -1px;
+}
+table { 
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  
+  
+ }
+ 
+td{
+  border: 1px solid black;
+  padding: 1px;
+  margin-left: 2px;
+  padding-left: 10px;
+}
+tr{
+  padding: 1px;
+}
+
+repobox {
+    width: 266px;
+    height: 512px;
+    border: 0px solid balck;
+    box-sizing: border-box;
+    position: absolute;
+    right: 24px;
+    top: 115px;
+    
+}
+
+
+
+
+</script>
+
+<script id="jsbin-source-javascript" type="text/javascript">function findData() 
+{
+  parseUserArray();
+}
+var options = {
+  method : 'GET',
+  headers: [{
+    name: 'Maciek', 
+    value: 'Maciek Piotrowski'
+  }]
+};
+
+function fetch(url,options)
+{
+    if(options === null)
+    {
+          options = 'GET'
+    }
+	return new Promise(function(resolve, reject) 
+    {
+		var req = new XMLHttpRequest(); 
+        if(options.method === undefined) 
+        {
+            options.method = 'GET';
+        } 
+		req.open(options.method, url);
+		req.onload = function() 
+        {
+		  if (req.status >= 200 && req.status <=300) 
+          {
+             resolve(req.response);
+		  }
+		  else 
+          {
+			reject(Error(req.statusText));
+		  }
+		};
+	
+		req.onerror = function() 
+		{
+			reject(Error("Network Error"));
+		};
+    req.send();
+  });
+}
+
+function getText()
+{
+	var getUsername = document.getElementById('usernamesearch').value;
+	if (getUsername === null || getUsername === "") 
+    {
+		alert("Username field is balnk. Please enter username");
+	}
+	return getUsername;
+}
+
+function parseUserArray() 
+{
+	var input = getText();
+	var fetchURL = 'https://api.github.com/users/' + input;
+	console.log(fetchURL);
+	fetch(fetchURL,options).then(function(response) {
+    var json = JSON.parse(response);  
+    updatePicture(json);
+    updateName(json);
+    updateUsername(json);
+    updateEmail(json);
+    updateLocation(json);
+    updateNumberOfGits(json);
+      
+  }).catch(function(err) {
+    console.log(err);
+  });
+  
+  var URL2 = 'https://api.github.com/users/' + input + '/repos';
+  fetch(URL2,options).then(function(response) {
+            var json = JSON.parse(response);  
+            var info = json.map(function (item) { return [item.name, item.description]; });
+            var setRepos = document.getElementById('userRepo');
+            
+			var name1 = info[0][0];
+			var desc1 = info[0][1];
+			setRepo1(name1,desc1);
+                 
+            var name2 = info[1][0];
+			var desc2 = info[1][1];
+			setRepo2(name2,desc2);
+            
+            var name3 = info[2][0];
+			var desc3 = info[2][1];
+            setRepo3(name3,desc3);
+            
+            var name4 = info[3][0];
+			var desc4 = info[3][1];
+			setRepo4(name4,desc4);
+            
+            var name5 = info[4][0];
+			var desc5 = info[4][1];
+			setRepo5(name5,desc5);
+             
+            var name6 = info[5][0];
+			var desc6 = info[5][1];
+		    setRepo6(name6,desc6);
+    
+  }).catch(function(err) {
+    console.log(err);
+  });
+}
+
+
+function updatePicture(json) 
+{
+  var avatar = document.getElementById('userpicture');
+  avatar.setAttribute("src", json.avatar_url);
+}
+function updateName(json)
+{
+  var name = document.getElementById('name');
+  name.innerHTML = "Name: " + json.name;
+}
+function updateUsername(json) 
+{
+  var username = document.getElementById('username');
+  username.innerHTML = "Username: " + json.login;
+}
+function updateEmail(json) 
+{
+  var email = document.getElementById('email');
+  email.innerHTML = "Eemail: " + json.email;
+}
+function updateLocation(json) 
+{
+  var location = document.getElementById('location');
+  location.innerHTML = "Location: " + json.location;
+}
+function updateNumberOfGits(json) 
+{
+  var gitnum = document.getElementById('nogits');
+  gitnum.innerHTML = "Number of Gits: " + json.public_gists;
+}
+		
+
+function setRepo1(name1,desc1) 
+{
+	var name = document.getElementById('name1');
+    var desc = document.getElementById('description1');
+	name.innerHTML = "Name: " + name1;
+    desc.innerHTML = "Description: " + desc1;
+}
+
+function setRepo2(name2,desc2) 
+{
+	var name = document.getElementById('name2');
+    var desc = document.getElementById('description2');
+	name.innerHTML = "Name: " + name2;
+    desc.innerHTML = "Description: " + desc2;
+}
+
+function setRepo3(name3,desc3) 
+{
+	var name = document.getElementById('name3');
+    var desc = document.getElementById('description3');
+	name.innerHTML = "Name: " + name3;
+    desc.innerHTML = "Description: " + desc3;
+}
+
+function setRepo4(name4,desc4) 
+{
+	var name = document.getElementById('name4');
+    var desc = document.getElementById('description4');
+	name.innerHTML = "Name: " + name4;
+    desc.innerHTML = "Description: " + desc4;
+}
+
+function setRepo5(name5,desc5) 
+{
+	var name = document.getElementById('name5');
+    var desc = document.getElementById('description5');
+	name.innerHTML = "Name: " + name5;
+    desc.innerHTML = "Description: " + desc5;
+}
+
+function setRepo6(name6,desc6) 
+{
+	var name = document.getElementById('name6');
+    var desc = document.getElementById('description6');
+	name.innerHTML = "Name: " + name6;
+    desc.innerHTML = "Description: " + desc6;
+}</script></body>
+</html>
