@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by maciekzdaleka (http://jsbin.com/bipefa/15/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="[Lab 2 Ex 1]">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script id="jsbin-javascript">
+var calculator = document.createElement("div");
+calculator.setAttribute("id","calculator");
+calculator.style.width="250px";
+calculator.style.height="260px";
+calculator.style.borderStyle="solid";
+calculator.style.borderColor="black";
+calculator.style.borderWidth="1px";
+calculator.style.borderRadius="7px";
+document.body.appendChild(calculator);
+
+var diswind = document.createElement("input");
+diswind.setAttribute("id", "dispalywindow");
+diswind.setAttribute("placeholder", "0 ")
+diswind.style.width = "230px";
+diswind.style.height = "40px";
+diswind.style.borderStyle = "solid";
+diswind.style.borderColor = "#ABABAB #ebebe0 #ebebe0 #ABABAB";
+diswind.style.borderWidth = "2px";
+diswind.style.borderRadius = "7px";
+diswind.style.position = "relative";
+diswind.style.bottom = "-5px";
+diswind.style.left = "8px";
+diswind.style.textAlign = "right";
+diswind.style.fontSize = "40px";
+diswind.style.backgroundColor = "#f5f5f0";
+calculator.appendChild(diswind);
+
+var cont = document.createElement("div");
+cont.setAttribute("id","container");
+cont.style.width = "250px"
+cont.style.height = "185px";
+cont.style.left = "8px";
+cont.style.top = "3px";
+cont.style.position = "relative";
+calculator.appendChild(cont);
+
+
+var buttons = [];
+
+var chars = ["(",")","±","÷",
+           "7","8","9","x",
+           "4","5","6","-",
+           "1","2","3","+",
+           "0",".","C","="];
+
+var i ;
+for(i=0; i<20; i++) 
+{
+  buttons[i] = document.createElement("button");
+  buttons[i].setAttribute("class","flex-item");
+  buttons[i].style.fontSize="1.1em";
+  buttons[i].style.borderRadius="5px";
+  buttons[i].style.width="53px";
+  buttons[i].style.margin="3px";
+  buttons[i].style.height="35px";
+  buttons[i].innerHTML = chars[i];
+  buttons[i].style.fontFamily="Verdana";
+  cont.appendChild(buttons[i]);
+}
+
+
+
+
+
+</script>
+</body>
+</html>
